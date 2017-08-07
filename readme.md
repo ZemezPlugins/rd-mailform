@@ -1,8 +1,8 @@
 # RD Mailform
 
-Вам необходимо взять исходники из файла репозитория js/core.min.js
+You need to take the sources from the repository file js/core.min.js
 
-Для инициализации формы, Вам необходимо вставить даный JS код.
+To initialize the form, you need to insert this JS code.
 
 		var plugins = {
 		    rdMailForm: $(".rd-mailform"),
@@ -279,7 +279,7 @@
 	  });
 
 
-И разметку:
+And markup:
 
 		<!-- RD Mailform-->
 		<form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
@@ -314,19 +314,19 @@
 		  </div>
 		</form>
 
-		<!-- Елемент в который будет выводиться информация об ошибке-->
+		<!-- Element for mailform error output -->
 		<div class="form-output-global"></div>
 
-Где есть след. настройки, в виде data атрибутов на элементе form и input:
-* data-form-output - id элемента куда будет выводиться результат работы формы.
-* data-form-type - тип формы, может принимать значение: contact, subscribe, order
-* data-constraints на поля ввода формы отвечает за его вализацию. Детальнее о настройке тут - https://github.com/vivin/regula/wiki
+Where are the following settings, on the form element and input:
+* data-form-output - Id of the element where the result of sending will be displayed.
+* data-form-type - Form type, can be: contact, subscribe, order
+* data-constraints - On the form input fields and used for its validation. More setting here - https://github.com/vivin/regula/wiki
 
-## Настройка информационных сообщений формы
+## Configuring the form's information messages
 
-Почтовая форма RD Mailform поддерживает кастомизацию информационных сообщений о успешной/неуспешной отправке формы.
+RD Mailform supports custom messages that inform about successful/unsuccessful sending of the form.
 
-Для того, чтобы изменить некоторые информационные сообщения по-умолчанию, необходимо в файле инициализации скриптов script.js в модуле RD Mailform внести соответствующие правки в поле msg целевого типа валидации.
+To change some default information messages, change the value of the msg field of the target validation type in script initialization file (scripts.js) in RD Mailform module:
 
         msg = {
           'MF000': 'Successfully sent!',
@@ -339,11 +339,13 @@
         };
     
 
-Для того, чтобы указать email адрес, на который будут приходить сообщения, отправляемые с помощью RD Mailform @version 3.2.0 необходимо в файле **bat/rd-mailform.config.json** вашего сайта, значение поля **recipientEmail** заменить на email реального получателя.
+In order to set up the email address to send the e-mails (sent with the help of RD Mailform @version 3.2.0), please replace in bat/rd-mailform.config.json file, value of recipientEmail field to recipient email.
 
 ![](http://puu.sh/x3V0M/505e567ba6.png)
-## Настройка SMTP
+
+
+## SMTP Settings
 
 ![](http://puu.sh/x3V1G/1ce22c81b6.png)
 
-Для настройки отправки почты через **SMTP**, Вам необходимо зайти в файл **bat/rd-mailform.config.json** и установить значение **useSmtp - true** и ввести настройки Вашего SMTP в следущих полях объекта.
+To configure sending e-mail using SMTP, you need to open the bat/rd-mailform.config.json file and set the value of the useSmtp field to true. Then, enter the settings of your SMTP into next object field.
