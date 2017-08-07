@@ -321,3 +321,29 @@
 * data-form-output - id элемента куда будет выводиться результат работы формы.
 * data-form-type - тип формы, может принимать значение: contact, subscribe, order
 * data-constraints на поля ввода формы отвечает за его вализацию. Детальнее о настройке тут - https://github.com/vivin/regula/wiki
+
+## Настройка информационных сообщений формы
+
+Почтовая форма RD Mailform поддерживает кастомизацию информационных сообщений о успешной/неуспешной отправке формы.
+
+Для того, чтобы изменить некоторые информационные сообщения по-умолчанию, необходимо в файле инициализации скриптов script.js в модуле RD Mailform внести соответствующие правки в поле msg целевого типа валидации.
+
+        msg = {
+          'MF000': 'Successfully sent!',
+          'MF001': 'Recipients are not set!',
+          'MF002': 'Form will not work locally!',
+          'MF003': 'Please, define email field in your form!',
+          'MF004': 'Please, define type of your form!',
+          'MF254': 'Something went wrong with PHPMailer!',
+          'MF255': 'Aw, snap! Something went wrong.'
+        };
+    
+
+Для того, чтобы указать email адрес, на который будут приходить сообщения, отправляемые с помощью RD Mailform @version 3.2.0 необходимо в файле **bat/rd-mailform.config.json** вашего сайта, значение поля **recipientEmail** заменить на email реального получателя.
+
+![](http://puu.sh/x3V0M/505e567ba6.png)
+## Настройка SMTP
+
+![](http://puu.sh/x3V1G/1ce22c81b6.png)
+
+Для настройки отправки почты через **SMTP**, Вам необходимо зайти в файл **bat/rd-mailform.config.json** и установить значение **useSmtp - true** и ввести настройки Вашего SMTP в следущих полях объекта.
