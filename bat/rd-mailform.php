@@ -1,7 +1,13 @@
 <?php
 
-$formConfigFile = file_get_contents("rd-mailform.config.json");
-$formConfig = json_decode($formConfigFile, true);
+$formConfig = array(
+  "useSmtp" => false,
+  "host" => "stmp.gmail.com",
+  "port" => 465,
+  "username" => "demo@gmail.com",
+  "password" => "demopassword",
+  "recipientEmail" =>  "demo@gmail.com"
+);
 
 date_default_timezone_set('Etc/UTC');
 
